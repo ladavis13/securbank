@@ -46,7 +46,7 @@
         {
             "component": "select",
             "name": "colspan",
-            "label": "Columns",
+            "label": "Column Span",
             "valueType": "string",
             "options": [
                 {
