@@ -142,10 +142,10 @@
       ]
     },
     {
-      "...": "../models/form-components/*/_*.json#/models"
+      "...": "./models/form-components/_*.json#/models"
     },
     {
-      "...": "../components/*/_*.json#/models"
+      "...": "./components/*/_*.json#/models"
     }
   ],
   "filters": [
