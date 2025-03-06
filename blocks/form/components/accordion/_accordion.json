@@ -73,15 +73,7 @@
                     ]
                 },
                 {
-                    "component": "container",
-                    "name": "help",
-                    "label": "Help Content",
-                    "collapsible": true,
-                    "fields": [
-                        {
-                            "...": "../../models/form-common/_help-container.json"
-                        }
-                    ]
+                    "...": "../../models/form-common/_help-container.json"
                 }
             ]
         }

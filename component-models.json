@@ -1889,13 +1889,6 @@
             "description": "Displayed when validation script fails."
           },
           {
-            "component": "text",
-            "name": "validateExpMessage",
-            "label": "Script validation message",
-            "valueType": "string",
-            "description": "Displayed when validation script fails."
-          },
-          {
             "component": "number",
             "name": "maxFileSize",
             "label": "Maximum file size (MB)",
@@ -4167,24 +4160,16 @@
         "collapsible": true,
         "fields": [
           {
-            "component": "container",
-            "name": "help",
-            "label": "Help Content",
-            "collapsible": true,
-            "fields": [
-              {
-                "component": "richtext",
-                "name": "description",
-                "label": "Help text",
-                "valueType": "string"
-              },
-              {
-                "component": "richtext",
-                "name": "tooltip",
-                "label": "Short description",
-                "valueType": "string"
-              }
-            ]
+            "component": "richtext",
+            "name": "description",
+            "label": "Help text",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "tooltip",
+            "label": "Short description",
+            "valueType": "string"
           }
         ]
       }
