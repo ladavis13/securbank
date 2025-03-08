@@ -82,11 +82,17 @@ form:not(.edit-mode) [data-visible="false"] {
     display: none !important;
 }
 
+main .form-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
 main .form-container {
     background-color: var(--form-background-color);
     padding: var(--form-padding);
     width: var(--form-width);
-    margin: var(--nav-height) auto;
 }
 
 main .form {
@@ -677,4 +683,19 @@ main .form .field-wrapper:not(.panel-wrapper, .button-wrapper, .plain-text-wrapp
 /* Keep the base positioning */
 main .form .field-wrapper {
     position: relative;
+}
+
+/* Responsive adjustments for mobile */
+@media (width <= 599px) {
+    :root {
+        --form-field-horz-gap: 10px;
+    }
+
+    main .form form .wizard  {
+        .wizard-menu-items {
+            gap: 20px;
+        }
+
+        margin: 0;
+    }
 }
