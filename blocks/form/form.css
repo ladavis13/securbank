@@ -9,25 +9,25 @@
     --form-font-size-m: 22px;
     --form-font-size-s: 18px;
     --form-font-size-xs: 16px;
-    --form-background-color: var(--background-color-primary);
+    --form-background-color: #fff;
     --form-padding: 0;
     --form-columns: 12;
     --form-field-horz-gap: 40px;
-    --form-field-vert-gap: 20px;
+    --form-field-vert-gap: 30px;
     --form-invalid-border-color: #ff5f3f;
-    --form-input-padding: 0.75rem 0.6rem;
-    --form-input-font-size: 1rem;
+    --form-input-padding: 1rem;
+    --form-input-font-size: 1.1rem;
     --form-input-disable-color: #ebebe4;
     --form-input-border-size: 1px;
-    --form-input-border-color: var(--border-color);
+    --form-input-border-color: #E5E5E5;
     --form-input-background-color: var(--background-color-primary);
     --form-paragraph-color: var(--label-color);
     --form-paragraph-margin: 0 0 0.9rem;
     --form-paragraph-font-style: none;
     --form-paragraph-font-size: var(--form-font-size-s);
-    --form-label-color: var(--label-color);
-    --form-label-font-size: var(--form-font-size-s);
-    --form-label-font-weight: 400;
+    --form-label-color: var(--text-color);
+    --form-label-font-size: var(--body-font-size-s);
+    --form-label-font-weight: 500;
     --form-title-font-weight: 600;
     --form-fieldset-border: 0;
     --form-fieldset-marign: 0;
@@ -38,25 +38,30 @@
     --form-fieldset-legend-border: none;
     --form-fieldset-legend-padding: 0;
     --form-button-color: var(--background-color-primary);
-    --form-button-font-size: var(--form-font-size-s);
-    --form-button-background-color: var(--button-primary-color);
-    --form-button-background-hover-color: var(--button-primary-hover-color);
+    --form-button-font-size: var(--body-font-size-s);
+    --form-button-background-color: var(--link-color);
+    --form-button-hover-color: var(--link-hover-color);
     --form-button-border: 2px solid transparent;
-    --form-button-padding:15px 50px;
+    --form-button-padding: 15px 40px;
+    --form-button-border-radius: 50px;
     --form-upload-color: var(--form-label-color);
     --form-upload-font-size: var(--form-font-size-xs);
     --form-upload-background-color: var(--background-color-primary);
     --form-submit-width: 100%;
-    --form-width: 95%;
+    --form-width: 100%;
     --form-wizard-border: 0;
     --form-wizard-background-color: var(--background-color-primary);
     --form-wizard-border-color: #757575;
-    --form-wizard-number-color: var(--button-primary-color);
+    --form-wizard-number-color: var(--link-color);
     --form-wizard-padding: 0px;
     --form-wizard-padding-bottom: 160px;
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
     --form-field-gap: 5px;
+    --form-wizard-number-size: 32px;
+    --form-wizard-number-font-size: 16px;
+    --form-wizard-active-text-color: var(--link-color);
+    --form-wizard-inactive-text-color: var(--text-color);
 }
 
 * {
@@ -124,19 +129,23 @@ main .form select {
     background-color: var(--form-input-background-color);
     border: var(--form-input-border-size) solid var(--form-input-border-color);
     width: 100%;
-    height: 42px;
+    height: 50px;
     color: var(--form-label-color);
     padding: var(--form-input-padding);
     font-size: var(--form-input-font-size);
     max-width: unset;
-    margin-top: .5rem;
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    border-radius: 8px;
+    background-color: #F8F8F8;
 }
 
 main .form select {
-  padding-top: 0;
-  padding-bottom: 0;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%234A4A4A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
 }
 
 main .form input[type='file'] {
@@ -199,7 +208,7 @@ main .form form fieldset.radio-group-wrapper > legend {
 
 main .form label.required::after {
     content: "*";
-    color: var(--form-label-color);
+    color: #D0021B;
     padding-inline-start: 5px;
 }
 
@@ -249,10 +258,12 @@ main .form form fieldset.cards > .checkbox-wrapper > label {
     display: flex;
     gap: 1rem;
     margin: 0 0 1rem;
-    border: 1px solid #dad6d6;
-    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #E5E5E5;
+    padding: 1rem;
     cursor: pointer;
     align-items: end;
+    transition: all 0.3s ease;
 }
 
 main .form form fieldset.cards.horizontal > .radio-wrapper > label,
@@ -263,8 +274,8 @@ main .form form fieldset.cards.horizontal > .checkbox-wrapper > label
 
 main .form form fieldset.cards > .radio-wrapper > input:checked ~ label,
 main .form form fieldset.cards > .checkbox-wrapper > input:checked ~ label{
-    border: 1px solid #1c3fca;
-    background-color: #F3F6FD;
+    border-color: var(--link-color);
+    background-color: #F3F8FA;
 }
 
 input::file-selector-button {
@@ -280,8 +291,11 @@ main .form button {
     border: var(--form-button-border);
     padding: var(--form-button-padding);
     font-size: var(--form-button-font-size);
-    border-radius: unset;
+    border-radius: var(--form-button-border-radius);
     width: 100%;
+    text-transform: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 main form .file-wrapper > button{
@@ -289,7 +303,7 @@ main form .file-wrapper > button{
 }
 
 main .form button:hover {
-    background: var(--form-button-background-hover-color);
+    background: var(--form-button-hover-color);
 }
 
 main .submit-wrapper{
@@ -444,33 +458,41 @@ main .form form .wizard .wizard-button-wrapper .field-wrapper{
     margin: 0;
     font-weight: var(--form-fieldset-legend-font-weight);
     font-size: var(--form-fieldset-legend-font-size);
-    color: var(--form-fieldset-legend-color);
+    color: var(--form-wizard-inactive-text-color);
     padding-bottom: var(--form-wizard-padding);
     grid-column: span 12;
 }
 
 main .form form .wizard .wizard-menu-item {
-  counter-increment: wizard-step-counter;
+    counter-increment: wizard-step-counter;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 main .form form .wizard .wizard-menu-item::before {
-  content: counter(wizard-step-counter);
-  border: 2px solid var(--form-wizard-number-color);
-  color: var(--form-wizard-number-color);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  margin-right: 10px;
-  text-align: center;
-  line-height: 2;
-  display: inline-block;
+    content: counter(wizard-step-counter);
+    border: 2px solid var(--form-wizard-number-color);
+    color: var(--form-wizard-inactive-text-color);
+    border-radius: 50%;
+    width: var(--form-wizard-number-size);
+    height: var(--form-wizard-number-size);
+    font-size: var(--form-wizard-number-font-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
-main .form form .wizard .wizard-menu-active-item::before{
-  border: 2px solid var(--form-wizard-number-color);
-  background: var(--form-wizard-number-color);
-  color: var(--background-color-primary);
-  font-weight: 600;
+main .form form .wizard .wizard-menu-active-item {
+    color: var(--form-wizard-active-text-color);
+    font-weight: 600;
+}
+
+main .form form .wizard .wizard-menu-active-item::before {
+    background: var(--form-wizard-number-color);
+    color: var(--background-color-primary);
+    border-color: var(--form-wizard-number-color);
 }
 
 @media (width >= 600px) {
@@ -632,4 +654,27 @@ main .form form .checkbox-group-wrapper.horizontal .field-description {
     width: 100%;
     order: 1;
     margin-top: 0.5rem;
+}
+
+/* Update info icon styling to be more specific */
+main .form .field-wrapper:not(.panel-wrapper, .button-wrapper, .plain-text-wrapper, fieldset)::after {
+    content: "?";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--link-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: help;
+}
+
+/* Keep the base positioning */
+main .form .field-wrapper {
+    position: relative;
 }
