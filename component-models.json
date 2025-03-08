@@ -116,6 +116,10 @@
           {
             "name": "Home",
             "value": "home"
+          },
+          {
+            "name": "Columns",
+            "value": "columns"
           }
         ]
       }
