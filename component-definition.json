@@ -255,7 +255,7 @@
                   "visible": true,
                   "enabled": true,
                   "orientation": "horizontal",
-                  "type": "number[]"
+                  "type": "string[]"
                 }
               }
             }
@@ -316,7 +316,7 @@
                   ],
                   "enabled": true,
                   "visible": true,
-                  "type": "number"
+                  "type": "string"
                 }
               }
             }
