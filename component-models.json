@@ -423,8 +423,8 @@
           },
           {
             "component": "boolean",
-            "name": "useExternalEmailTemplate",
-            "label": "Use external template",
+            "name": "useHtmlTemplate",
+            "label": "Use HTML template",
             "valueType": "boolean"
           },
           {
