@@ -58,9 +58,28 @@
                   {
                       "name": "Send email",
                       "value": "fd/af/components/guidesubmittype/email"
+                  },
+                  {
+                    "name": "Submit to Spreadsheet",
+                    "value": "fd/af/components/guidesubmittype/franklin/spreadsheet"
                   }
               ],
               "value" : ""
+          },
+          {
+            "component": "text",
+            "name": "spreadsheetUrl",
+            "label": "Spreadsheet Url",
+            "valueType": "string",
+            "required": true,
+            "condition": {
+              "==": [
+                {
+                  "var": "actionType"
+                },
+                "fd/af/components/guidesubmittype/franklin/spreadsheet"
+              ]
+            }
           },
           {
               "component": "boolean",
@@ -116,6 +135,12 @@
                       "name": "subject",
                       "label": "Subject",
                       "valueType": "string"
+                  },
+                  {
+                      "component": "boolean",
+                      "name": "useExternalEmailTemplate",
+                      "label": "Use external template",
+                      "valueType": "boolean"
                   },
                   {
                       "component": "boolean",
