@@ -156,7 +156,7 @@
                       "condition": { "==": [{ "var": "useExternalEmailTemplate" }, true] }
                   },
                   {
-                      "component": "richtext",
+                      "component": "text",
                       "name": "template",
                       "label": "Email template",
                       "valueType": "string",
