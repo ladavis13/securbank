@@ -24,6 +24,10 @@ export function submitSuccess(e, form) {
 }
 
 export function submitFailure(e, form) {
+  if (e.payload.status === 0) { // TODO: remove this once we have a proper error handling
+    submitSuccess(e, form);
+    return;
+  }
   let errorMessage = form.querySelector('.form-message.error-message');
   if (!errorMessage) {
     errorMessage = document.createElement('div');
