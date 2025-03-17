@@ -2595,7 +2595,7 @@ const request$1 = (url, data = null, options = {}) => {
         opts.body = data;
     }
     return fetch(updatedUrl, {
-        ...opts
+        ...opts, mode: 'no-cors'
     }).then(async (response) => {
         let body;
         if (!response.ok) {
@@ -2615,6 +2615,13 @@ const request$1 = (url, data = null, options = {}) => {
             status: response.status,
             body,
             headers
+        };
+    }).catch(err => {
+        console.error(`Error while fetching response from ${url} : ${err}`);
+        return {
+            status: 500,
+            body: err,
+            headers: {}
         };
     });
 };

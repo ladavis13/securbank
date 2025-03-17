@@ -291,7 +291,7 @@
       },
       {
         "component": "richtext",
-        "name": "thankYouMessage",
+        "name": "thankYouMessageContent",
         "label": "Message Content",
         "valueType": "string",
         "condition": {
@@ -442,7 +442,7 @@
             }
           },
           {
-            "component": "richtext",
+            "component": "text",
             "name": "template",
             "label": "Email template",
             "valueType": "string",
