@@ -2,8 +2,8 @@
 SecurBank Demo Site for Adobe Experience Manager with Edge Delivery Services hosted at https://www.securbankdemo.com
 
 ## Environments
-- Preview: https://main--securbank-aem-ue--markszulc.aem.page/
-- Live: https://main--securbank-aem-ue--markszulc.aem.live/
+- Preview: https://main--securbank--aem-showcase.aem.page
+- Live: https://main--securbank--aem-showcase.aem.live
 
 ## AEM Configuration
 Headless GraphQL calls are still being made to the Publish / Dispatcher at this time. 
