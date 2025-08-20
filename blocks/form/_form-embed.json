@@ -1,10 +1,4 @@
-{
-    "css": [
-    "https://main--aem-boilerplate-forms--adobe-rnd.aem.live/blocks/form/form.css"
-  ],
-  "js": [
-    "https://main--aem-boilerplate-forms--adobe-rnd.aem.live/blocks/form/form.js"
-  ],
+{   
     "definitions": [
       {
         "title": "Adaptive Form - Embed",
